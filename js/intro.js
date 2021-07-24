@@ -47,3 +47,16 @@ addFavouriteBook("Great Expectations");
 addFavouriteBook("You Don't Know JS");
 
 printFavouriteBooks();
+
+// Coercive Equality: == and ===
+var student1 = "Shreya";
+var student2 = `${student1}`;
+
+var workshop1 = 16;
+var workshop2 = workshop1 + 0;
+
+student1 == student2; //true
+student1 === student2; //true
+
+workshop1 == workshop2;  //true
+workshop1 === workshop2;  //true
