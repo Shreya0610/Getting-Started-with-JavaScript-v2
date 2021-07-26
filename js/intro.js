@@ -21,6 +21,15 @@ var friends = ["Ekta", "Shivani", "Rai"];
 console.log(friends.length);
 console.log(friends[0]);
 
+// set timeout
+function thisIsMyName(name) {
+  setTimeout(function waitASec() {
+    console.log(name);
+  }, 1000);
+}
+
+thisIsMyName("America");
+
 // Coercive Equality: == and ===
 var student1 = "Shreya";
 var student2 = `${student1}`;
@@ -45,3 +54,25 @@ function change() {
 console.log(pname);
 change();
 console.log(teacher);
+
+//this keyword example 1
+var family = {
+  father: "Ravi Shankar",
+  mother: "Bharti",
+  myFamily(myself) {
+    console.log(this.father, this.mother, myself);
+  },
+};
+family.myFamily("Shreya");
+
+//this example 2 (dynamic context)
+function ask(question) {
+  console.log(this.teacher, question);
+}
+function otherClass() {
+  var myContext = {
+    teacher: "Kyle",
+  };
+  ask.call(myContext, "Why??");
+}
+otherClass();
